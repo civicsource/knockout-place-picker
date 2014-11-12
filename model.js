@@ -4,7 +4,7 @@
 		function ViewModel(modelData) {
 
 			this.placesUrl = urls.fips + "places/";
-			this.autoCompletePlacesUrl = this.placesUrl + "?q=%QUERY";
+			this.autoCompletePlacesUrl = this.placesUrl + "?q=%QUERY&types=City&types=County";
 			this.authToken = user.authToken;
 			this.templateName = "place-picker-choice";
 
