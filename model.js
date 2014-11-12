@@ -11,6 +11,12 @@
 			this.mapping = function (data) {
 				var model = init(this, data);
 
+				model.displayName = _.compact([
+					model.name(),
+					model.parent ? model.parent().name : null,
+					model.parent && model.parent().parent ? model.parent().parent.name : null
+				]).join(", ");
+
 				return model;
 			}.bind(this);
 		}
