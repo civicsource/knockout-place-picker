@@ -1,15 +1,17 @@
-﻿define(["knockout", "jquery", "./model",
+﻿define(["knockout", "jquery", "lodash", "./model",
 	"knockout.punches",
 	"template!./templates/index.html!place-picker-main",
 	"template!./templates/choice.html!place-picker-choice",
-], function (ko, $, ViewModel) {
+], function (ko, $, _, ViewModel) {
 	ko.punches.enableAll();
 	ko.punches.interpolationMarkup.enable();
 	ko.punches.attributeInterpolationMarkup.enable();
 
 	ko.bindingHandlers.placePicker = {
-		init: function (element, valueAccessor) {
+		init: function (element, valueAccessor, allBindings) {
 			var model = new ViewModel(valueAccessor());
+
+			model.instanceName = allBindings.get('id') || _.uniqueId("place-picker--");
 
 			$(element)
 				.on("focusout", function () {
