@@ -1,6 +1,6 @@
 ﻿<div class="place-picker__container">
 	{{#ifnot selected}}
-	<input id="filing-place" class="form-control" type="text" data-bind="typeahead: autoCompletePlacesUrl, templateName: templateName, mappingFunction: mapping, displayKey: 'fullName'" />
+	<input id="filing-place" class="form-control" type="text" data-bind="typeahead: autoCompletePlacesUrl, templateName: templateName, mappingFunction: mapping, displayKey: 'fullName', hasfocus: !selected()" />
 	{{/ifnot}}
 	{{#if selected}}
 	<p class="form-control clearfix">
