@@ -1,12 +1,12 @@
-﻿define(["knockout", "app/urls", "jquery", "data", "knockout.init", "lodash", "app/user/current",
-	"knockout.integer"],
-	function (ko, urls, $, data, init, _, user) {
-		function ViewModel(modelData) {
+﻿define(["knockout", "app/urls", "jquery", "data", "knockout.init"],
+	function (ko, urls, $, data, init) {
+		function ViewModel(selected) {
 
 			this.placesUrl = urls.fips + "places/";
 			this.autoCompletePlacesUrl = this.placesUrl + "?q=%QUERY&types=City&types=County";
-			this.authToken = user.authToken;
 			this.templateName = "place-picker-choice";
+
+			this.selected = ko.isObservable(selected) ? selected : ko.observable(selected);
 
 			this.mapping = function (data) {
 				var model = init(this, data);

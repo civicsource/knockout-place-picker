@@ -1,3 +1,13 @@
 ﻿<div class="place-picker__container">
-	<input id="filing-place" class="form-control" type="text" data-bind="typeahead: autoCompletePlacesUrl, authToken: authToken, templateName: templateName, mappingFunction: mapping, displayKey: 'fullName'" />
+	{{#ifnot selected}}
+	<input id="filing-place" class="form-control" type="text" data-bind="typeahead: autoCompletePlacesUrl, templateName: templateName, mappingFunction: mapping, displayKey: 'fullName'" />
+	{{/ifnot}}
+	{{#if selected}}
+	<p class="form-control clearfix">
+		{{selected().fullName}}
+		<a class="pull-right btn btn-xs btn-danger" href="#" data-bind="click: function() { selected(null); }" title="Clear Selection">
+			<i class="fa fa-times"></i>
+		</a>
+	</p>
+	{{/#if}}
 </div>

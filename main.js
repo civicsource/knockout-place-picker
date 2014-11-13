@@ -8,14 +8,18 @@
 	ko.punches.attributeInterpolationMarkup.enable();
 
 	ko.bindingHandlers.placePicker = {
-		init: function (element) {
+		init: function (element, valueAccessor) {
+			var model = new ViewModel(valueAccessor());
+
+			$(element).on("typeahead:selected typeahead:autocompleted", function (e, suggestion) {
+				model.selected(suggestion);
+			});
+
+			ko.renderTemplate("place-picker-main",model, null, element, "replaceChildren");
+
 			return {
 				controlsDescendantBindings: true
 			};
-		},
-		update: function (element, valueAccessor, allBindings) {
-			var unwrapped = ko.unwrap(valueAccessor());
-			ko.renderTemplate("place-picker-main", new ViewModel(unwrapped), null, element, "replaceChildren");
 		}
 	};
 	ko.virtualElements.allowedBindings.placePicker = true;
