@@ -1,3 +1,11 @@
 ﻿<div class="place-picker__choice">
-	{{fullName}}
+	<h5>
+		{{name}}
+	</h5>
+	<small>
+		{{type}} in
+		{{#with parent}}		
+		{{name}}{{#if $data.parent}}, {{parent.name}}{{/if}}
+		{{/with}}
+	</small>
 </div>
