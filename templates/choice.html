@@ -2,10 +2,7 @@
 	<h5>
 		{{name}}
 	</h5>
-	<small>
-		{{type}} in
-		{{#with parent}}		
-		{{name}}{{#if $data.parent}}, {{parent.name}}{{/if}}
-		{{/with}}
-	</small>
+	{{#if parent}}
+		<small>{{type}} in {{parent().fullName}}</small>
+	{{/if}}
 </div>
