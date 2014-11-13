@@ -3,7 +3,7 @@
 		function ViewModel(selected) {
 
 			this.placesUrl = urls.fips + "places/";
-			this.autoCompletePlacesUrl = this.placesUrl + "?q=%QUERY&types=City&types=County";
+			this.autoCompletePlacesUrl = this.placesUrl + "?q=%QUERY*&types=City&types=County";
 			this.templateName = "place-picker-choice";
 
 			this.selected = ko.isObservable(selected) ? selected : ko.observable(selected);
