@@ -19,3 +19,4 @@ Then add the folder to your project.
 ```
 
 where `myPlace` is an observable you want two-way bound to the component.
+In the case of place picker, this is an object containing the selected suggestion from typeahead results, or `undefined` if nothing is selected.
