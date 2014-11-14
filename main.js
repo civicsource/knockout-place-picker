@@ -29,5 +29,4 @@
 			};
 		}
 	};
-	ko.virtualElements.allowedBindings.placePicker = true;
 });
