@@ -5,7 +5,7 @@
 ##Install with [Bower](http://bower.io/)
 
 ```
-bower install civicsource/knockout-place-picker
+bower install civicsource/knockout-place-picker --save
 ```
 
 Then add the folder to your project.
@@ -18,5 +18,6 @@ Then add the folder to your project.
 <span data-bind="placePicker: myPlace"></span>
 ```
 
-where `myPlace` is an observable you want two-way bound to the component.
-In the case of place picker, this is an object containing the selected suggestion from typeahead results, or `undefined` if nothing is selected.
+where `myPlace` is an observable you want two-way bound to the component. In the case of place picker, this is an object containing the selected suggestion from typeahead results, or `undefined` if nothing is selected.
+
+This component complements and can be used with the [Knockout Place Viewer](https://github.com/civicsource/knockout-place-viewer)
