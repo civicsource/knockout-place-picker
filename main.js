@@ -2,6 +2,7 @@
 	"knockout.punches",
 	"template!./templates/index.html!place-picker-main",
 	"template!./templates/choice.html!place-picker-choice",
+	"less!./place-picker.less"
 ], function (ko, $, _, ViewModel) {
 	ko.punches.enableAll();
 	ko.punches.interpolationMarkup.enable();

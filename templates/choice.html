@@ -1,8 +1,6 @@
 ﻿<div class="place-picker__choice">
-	<h5>
-		{{name}}
+	<h5 class="clearfix">
+		<span class="place-picker__choice__full-name">{{fullName}}</span>
+		<span class="hidden-xs pull-right place-picker__choice__type">{{type}}</span>
 	</h5>
-	{{#if parent}}
-		<small>{{type}} in {{parent().fullName}}</small>
-	{{/if}}
 </div>
