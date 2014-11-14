@@ -1,6 +1,6 @@
 #Knockout Place Picker
 
-> Knockout Knockout component to pick a [FIPs place](https://github.com/civicsource/fips).
+> Knockout component to pick a [FIPs place](https://github.com/civicsource/fips).
 
 ##Install with [Bower](http://bower.io/)
 
