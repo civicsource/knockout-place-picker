@@ -26,9 +26,11 @@
     "knockout-require-templates": "~1.0.1",
     "lodash": "~2.4.1",
     "jquery": "~1.10",
-    "knockout-init": "~1.1.0"
+    "knockout-init": "~1.1.0",
+    "bootstrap": "civicsource/bootstrap#archon-market"
   },
   "resolutions": {
-    "knockout": "~3.2.0"
+    "knockout": "~3.2.0",
+    "bootstrap": "archon-market"
   }
 }
