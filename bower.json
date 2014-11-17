@@ -27,10 +27,9 @@
     "lodash": "~2.4.1",
     "jquery": "~1.10",
     "knockout-init": "~1.1.0",
-    "bootstrap": "civicsource/bootstrap#archon-market"
+    "bootstrap": "~3.3.1"
   },
   "resolutions": {
-    "knockout": "~3.2.0",
-    "bootstrap": "archon-market"
+    "knockout": "~3.2.0"
   }
 }
