@@ -20,9 +20,10 @@
 				})
 				.on("typeahead:selected typeahead:autocompleted", function (e, suggestion) {
 					model.selected(suggestion);
+					$(element).find("a").first().focus();
 				});
 
-			ko.renderTemplate("place-picker-main",model, null, element, "replaceChildren");
+			ko.renderTemplate("place-picker-main", model, null, element, "replaceChildren");
 
 			return {
 				controlsDescendantBindings: true
