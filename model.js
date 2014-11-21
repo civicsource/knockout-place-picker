@@ -14,6 +14,22 @@
 
 			return model;
 		}.bind(this);
+
+		this.selected.subscribe(ensurePlace, this);
+
+		ensurePlace.call(this, this.selected());
+	}
+
+	function ensurePlace(place) {
+		if (!place.fullName) {
+			$.ajax(urls.fips + "places/" + place.fips, {
+				type: "GET",
+				contentType: "application/json",
+				context: this
+			}).then(function (data) {
+				this.selected(data);
+			});
+		}
 	}
 
 	return ViewModel;
