@@ -21,7 +21,7 @@
 	}
 
 	function ensurePlace(place) {
-		if (!place.fullName) {
+		if (place && !place.fullName) {
 			$.ajax(urls.fips + "places/" + place.fips, {
 				type: "GET",
 				contentType: "application/json",
