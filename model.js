@@ -22,7 +22,7 @@
 
 	function ensurePlace(place) {
 		if (place && !place.fullName) {
-			$.ajax(urls.fips + "places/" + place.fips, {
+			$.ajax(urls.fips + "places/" + place.fips + "/", {
 				type: "GET",
 				contentType: "application/json",
 				context: this
