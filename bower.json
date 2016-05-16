@@ -1,6 +1,6 @@
 {
   "name": "knockout-place-picker",
-  "version": "1.0.5",
+  "version": "2.0.0",
   "main": "main.js",
   "description": "Knockout component to pick a FIPs place.",
   "private": true,

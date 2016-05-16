@@ -1,8 +1,8 @@
 ﻿define(["knockout", "jquery", "lodash", "./model",
 	"knockout.punches",
-	"template!./templates/index.html!place-picker-main",
-	"template!./templates/choice.html!place-picker-choice",
-	"less!./place-picker.less"
+	"knockout-template?name=place-picker-main!html!./templates/index.html",
+	"knockout-template?name=place-picker-choice!html!./templates/choice.html",
+	"./place-picker.less"
 ], function (ko, $, _, ViewModel) {
 	ko.punches.enableAll();
 	ko.punches.interpolationMarkup.enable();
