@@ -1,6 +1,6 @@
-﻿define(["knockout", "app/urls", "knockout.init"], function (ko, urls, init) {
+﻿define(["knockout", "app/payload", "knockout.init"], function (ko, payload, init) {
 	function ViewModel(selected) {
-		this.placesUrl = urls.fips + "places/";
+		this.placesUrl = payload.urls.fips + "places/";
 		this.autoCompletePlacesUrl = this.placesUrl + "?q=%QUERY*&types=City&types=County";
 		this.templateName = "place-picker-choice";
 
@@ -22,7 +22,7 @@
 
 	function ensurePlace(place) {
 		if (place && !place.fullName) {
-			$.ajax(urls.fips + "places/" + place.fips + "/", {
+			$.ajax(payload.urls.fips + "places/" + place.fips + "/", {
 				type: "GET",
 				contentType: "application/json",
 				context: this
