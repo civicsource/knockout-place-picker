@@ -1,0 +1,8 @@
+﻿.place-picker__choice__full-name {
+	font-size: 14px;
+	font-weight: 500
+}
+.place-picker__choice__type {
+	font-size: 12px;
+	opacity: 0.6;
+}

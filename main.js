@@ -1,33 +1,36 @@
-﻿define(["knockout", "jquery", "lodash", "./model",
-	"knockout.punches",
-	"knockout-template?name=place-picker-main!html!./templates/index.html",
-	"knockout-template?name=place-picker-choice!html!./templates/choice.html",
-	"./place-picker.less"
-], function (ko, $, _, ViewModel) {
-	ko.punches.enableAll();
-	ko.punches.interpolationMarkup.enable();
-	ko.punches.attributeInterpolationMarkup.enable();
+var ko = require("knockout");
+var $ = require("jquery");
+var _ = require("lodash");
+var ViewModel = require("./model");
 
-	ko.bindingHandlers.placePicker = {
-		init: function (element, valueAccessor, allBindings) {
-			var model = new ViewModel(valueAccessor());
+require("knockout.punches");
+require("knockout-template?name=place-picker-main!html!./templates/index.html");
+require("knockout-template?name=place-picker-choice!html!./templates/choice.html");
+require("css!./place-picker.css");
 
-			model.instanceName = allBindings.get('id') || _.uniqueId("place-picker--");
+ko.punches.enableAll();
+ko.punches.interpolationMarkup.enable();
+ko.punches.attributeInterpolationMarkup.enable();
 
-			$(element)
-				.on("focusout", function () {
-					model.selected.valueHasMutated();
-				})
-				.on("typeahead:selected typeahead:autocompleted", function (e, suggestion) {
-					model.selected(suggestion);
-					$(element).find("a").first().focus();
-				});
+ko.bindingHandlers.placePicker = {
+	init: function (element, valueAccessor, allBindings) {
+		var model = new ViewModel(valueAccessor());
 
-			ko.renderTemplate("place-picker-main", model, null, element, "replaceChildren");
+		model.instanceName = allBindings.get("id") || _.uniqueId("place-picker--");
 
-			return {
-				controlsDescendantBindings: true
-			};
-		}
-	};
-});
+		$(element)
+			.on("focusout", function () {
+				model.selected.valueHasMutated();
+			})
+			.on("typeahead:selected typeahead:autocompleted", function (e, suggestion) {
+				model.selected(suggestion);
+				$(element).find("a").first().focus();
+			});
+
+		ko.renderTemplate("place-picker-main", model, null, element, "replaceChildren");
+
+		return {
+			controlsDescendantBindings: true
+		};
+	}
+};

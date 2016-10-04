@@ -1,0 +1,39 @@
+{
+  "name": "knockout-place-picker",
+  "version": "3.0.0",
+  "description": "Knockout component to pick a FIPs place.",
+  "main": "main.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/civicsource/knockout-place-picker.git"
+  },
+  "keywords": [
+    "knockout",
+    "FIPs",
+    "typeahead",
+    "autocomplete"
+  ],
+  "author": "CivicSource",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/civicsource/knockout-place-picker/issues"
+  },
+  "peerDependencies": {
+    "knockout": "3.x"
+  },
+  "dependencies": {
+    "css-loader": "^0.25.0",
+    "jquery": ">=1.10",
+    "knockout.init": "2.x",
+    "knockout.punches": "~0.5.0",
+    "knockout.typeahead": "4.x",
+    "lodash.uniqueid": "4.x"
+  },
+  "homepage": "https://github.com/civicsource/knockout-place-picker#readme",
+  "devDependencies": {
+    "eslint": "^3.7.1",
+    "eslint-config-civicsource": "^1.1.1"
+  }
+}

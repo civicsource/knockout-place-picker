@@ -1,36 +1,41 @@
-﻿define(["knockout", "app/payload", "knockout.init"], function (ko, payload, init) {
-	function ViewModel(selected) {
-		this.placesUrl = payload.urls.fips + "places/";
-		this.autoCompletePlacesUrl = this.placesUrl + "?q=%QUERY*&types=City&types=County";
-		this.templateName = "place-picker-choice";
+var ko = require("knockout");
+var init = require("knockout.init");
+var $ = require("jquery");
 
-		this.selected = ko.isObservable(selected) ? selected : ko.observable(selected);
-		this.selected.clear = function () {
-			this.selected(undefined);
-		}.bind(this);
+var fipsUrl = window && window.civicsource && window.civicsource.payload && window.civicsource.payload.urls ? window.civicsource.payload.urls.fips + "places/" : null;
 
-		this.mapping = function (data) {
-			var model = init(this, data);
+function ViewModel(selected) {
 
-			return model;
-		}.bind(this);
+	this.placesUrl = fipsUrl;
+	this.autoCompletePlacesUrl = `${this.placesUrl  }?q=%QUERY*&types=City&types=County`;
+	this.templateName = "place-picker-choice";
 
-		this.selected.subscribe(ensurePlace, this);
+	this.selected = ko.isObservable(selected) ? selected : ko.observable(selected);
+	this.selected.clear = function () {
+		this.selected(undefined);
+	}.bind(this);
 
-		ensurePlace.call(this, this.selected());
+	this.mapping = function (data) {
+		var model = init(this, data);
+
+		return model;
+	}.bind(this);
+
+	this.selected.subscribe(ensurePlace, this);
+
+	ensurePlace.call(this, this.selected());
+}
+
+function ensurePlace(place) {
+	if (place && !place.fullName) {
+		$.ajax(fipsUrl + place.fips + "/", {
+			type: "GET",
+			contentType: "application/json",
+			context: this
+		}).then(function (data) {
+			this.selected(data);
+		});
 	}
+}
 
-	function ensurePlace(place) {
-		if (place && !place.fullName) {
-			$.ajax(payload.urls.fips + "places/" + place.fips + "/", {
-				type: "GET",
-				contentType: "application/json",
-				context: this
-			}).then(function (data) {
-				this.selected(data);
-			});
-		}
-	}
-
-	return ViewModel;
-});
+module.exports = ViewModel;
