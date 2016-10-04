@@ -1,10 +1,9 @@
 {
   "name": "knockout-place-picker",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Knockout component to pick a FIPs place.",
   "main": "main.js",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/civicsource/knockout-place-picker.git"
@@ -24,8 +23,8 @@
     "knockout": "3.x"
   },
   "dependencies": {
-    "css-loader": "^0.25.0",
     "jquery": ">=1.10",
+    "knockout-template-loader": "1.x",
     "knockout.init": "2.x",
     "knockout.punches": "~0.5.0",
     "knockout.typeahead": "4.x",

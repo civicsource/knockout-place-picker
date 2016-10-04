@@ -6,7 +6,7 @@ var ViewModel = require("./model");
 require("knockout.punches");
 require("knockout-template?name=place-picker-main!html!./templates/index.html");
 require("knockout-template?name=place-picker-choice!html!./templates/choice.html");
-require("css!./place-picker.css");
+require("./place-picker");
 
 ko.punches.enableAll();
 ko.punches.interpolationMarkup.enable();
