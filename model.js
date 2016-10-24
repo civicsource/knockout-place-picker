@@ -7,7 +7,7 @@ var fipsUrl = window && window.civicsource && window.civicsource.payload && wind
 function ViewModel(selected) {
 
 	this.placesUrl = fipsUrl;
-	this.autoCompletePlacesUrl = `${this.placesUrl  }?q=%QUERY*&types=City&types=County`;
+	this.autoCompletePlacesUrl = this.placesUrl + "?q=%QUERY*&types=City&types=County";
 	this.templateName = "place-picker-choice";
 
 	this.selected = ko.isObservable(selected) ? selected : ko.observable(selected);
