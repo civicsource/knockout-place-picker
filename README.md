@@ -1,8 +1,8 @@
-#Knockout Place Picker
+# Knockout Place Picker
 
 > Knockout component to pick a [FIPs place](https://github.com/civicsource/fips).
 
-##Install with [Bower](http://bower.io/)
+## Install with [Bower](http://bower.io/)
 
 ```
 bower install civicsource/knockout-place-picker --save
@@ -10,7 +10,7 @@ bower install civicsource/knockout-place-picker --save
 
 Then add the folder to your project.
 
-##How to Use
+## How to Use
 
 `require` the script and use it as a binding handler:
 
