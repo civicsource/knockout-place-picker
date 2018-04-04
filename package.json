@@ -1,6 +1,6 @@
 {
   "name": "knockout-place-picker",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "Knockout component to pick a FIPs place.",
   "main": "main.js",
   "scripts": {},
@@ -24,7 +24,6 @@
   },
   "dependencies": {
     "jquery": ">=1.10",
-    "knockout-template-loader": "1.x",
     "knockout.init": "2.x",
     "knockout.punches": "~0.5.0",
     "knockout.typeahead": "4.x",
