@@ -2,13 +2,11 @@
 
 > Knockout component to pick a [FIPs place](https://github.com/civicsource/fips).
 
-## Install with [Bower](http://bower.io/)
+## Installation
 
 ```
-bower install civicsource/knockout-place-picker --save
+npm install knockout-place-picker --save
 ```
-
-Then add the folder to your project.
 
 ## How to Use
 
